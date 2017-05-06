@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <form name="userAddForm">
+      <div class="col-sm-offset-2 col-sm-8 col-md-offset-4 col-md-4 rowCol">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span> User Name</span>
+          <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" name="userName" ng-model="user.name" required>
+        </div>
+        <p ng-show="userAddForm.userName.$invalid && !userAddForm.userName.$pristine" class="label label-danger">User Name is required.</p>
+      </div>
+      <div class="col-sm-offset-2 col-sm-8 col-md-offset-4 col-md-4 rowCol">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope"></span> Email</span>
+          <input type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1" name="emailID" ng-model="user.email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required>
+        </div>
+        <p ng-show="userAddForm.emailID.$invalid && !userAddForm.emailID.$pristine" class="label label-danger">Email is required and enter valid email.</p>
+      </div>
+      <div class="col-sm-offset-2 col-sm-8 col-md-offset-4 col-md-4 rowCol">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-asterisk"></span> Password</span>
+          <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="password" ng-model="user.password" required>
+        </div>
+        <p ng-show="userAddForm.password.$invalid && !userAddForm.password.$pristine" class="label label-danger">Password is required.</p>
+      </div>
+      <div class="col-sm-offset-2 col-sm-8 col-md-offset-4 col-md-4 rowCol">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-asterisk"></span> Confirm Password</span>
+          <input type="Password" class="form-control" placeholder="Confirm password" aria-describedby="basic-addon1" name="confPassword" ng-model="user.confPassword" required>
+        </div>
+        <p ng-show="userAddForm.confPassword.$invalid && !userAddForm.confPassword.$pristine" class="label label-danger">Confirm Password is required.</p>
+      </div>
+      <div class="col-sm-offset-2 col-sm-8 col-md-offset-4 col-md-4 rowCol">
+        <button type="button" class="btn btn-primary" ng-click="creatUser()" ng-disabled="userAddForm.$invalid || user.password !== user.confPassword">Create User <span class="glyphicon glyphicon-plus"></span></button>
+        <button type="button" class="btn btn-danger" ng-click="cancel()">Cancel <span class="glyphicon glyphicon-remove"></span></button>
+      </div>
+    </form>
+  </div>
+</div>

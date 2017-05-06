@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">User Details</h3> <button ng-click="addUser()" type="button" class="btn btn-primary">Add User <span class="glyphicon glyphicon-plus"></span></button>
+    </div>
+    <div class="panel-body">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="userList in userLists">
+                <p><span><strong>Name:</strong></span> {{userList.name}}</p>
+                <p><span><strong>Email Id:</strong> {{userList.email}}</span></p>
+                <button ng-click="editUser(userList._id)" button type="button" class="btn btn-info">Edit <span class="glyphicon glyphicon-edit"></span></button>
+                <button ng-click="deleteUser(userList._id)" type="button" class="btn btn-danger">Delete <span class="glyphicon glyphicon-trash"></span></button>
+            </li>
+        </ul>
+    </div>
+</div>

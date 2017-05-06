@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-offset-2 col-sm-8 col-md-offset-4 col-md-4 rowCol">
+      <h1>Login</h1>
+      <form name="loginForm">
+        <div class="rowCol">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span> Email</span>
+            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" name="email" ng-model="user.login.email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required>
+          </div>
+          <p ng-show="loginForm.userName.$invalid && !loginForm.userName.$pristine" class="label label-danger">User Name is required.</p>
+        </div>
+        <div class="rowCol">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-asterisk"></span> Password</span>
+            <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="password" ng-model="user.login.password" required>
+          </div>
+          <p ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" class="label label-danger">Password is required.</p>
+        </div>
+        <div class="rowCol">
+          <button type="button" class="btn btn-primary" ng-click="login()" ng-disabled="loginForm.$invalid">Login <span class="glyphicon glyphicon-log-in"></span></button>
+          <button type="button" class="btn btn-danger" ng-click="forgetPassword()">Forget Password <span class="glyphicon glyphicon-asterisk"></span></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-offset-2 col-sm-8 col-md-offset-4 col-md-4 rowCol">
+      <h1>Register</h1>
+      <form name="userAddForm">
+        <div class="rowCol">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span> Name</span>
+            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" name="userName" ng-model="user.register.name" required>
+          </div>
+          <p ng-show="userAddForm.userName.$invalid && !userAddForm.userName.$pristine" class="label label-danger">User Name is required.</p>
+        </div>
+        <div class="rowCol">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope"></span> Email</span>
+            <input type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1" name="email" ng-model="user.register.email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required>
+          </div>
+          <p ng-show="userAddForm.email.$invalid && !userAddForm.email.$pristine" class="label label-danger">Email is required and enter valid email.</p>
+        </div>
+        <div class="rowCol">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-asterisk"></span> Password</span>
+            <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="password" ng-model="user.register.password" required>
+          </div>
+          <p ng-show="userAddForm.password.$invalid && !userAddForm.password.$pristine" class="label label-danger">Password is required.</p>
+        </div>
+        <div class="rowCol">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-asterisk"></span> Confirm Password</span>
+            <input type="Password" class="form-control" placeholder="Confirm password" aria-describedby="basic-addon1" name="confPassword" ng-model="user.register.confPassword" required>
+          </div>
+          <p ng-show="userAddForm.confPassword.$invalid && !userAddForm.confPassword.$pristine" class="label label-danger">Confirm Password is required.</p>
+        </div>
+        <div class="rowCol">
+          <button type="button" class="btn btn-primary" ng-click="register()" ng-disabled="userAddForm.$invalid || user.password !== user.confPassword">Create User <span class="glyphicon glyphicon-plus"></span></button>
+          <button type="button" class="btn btn-danger" ng-click="cancel()">Cancel <span class="glyphicon glyphicon-remove"></span></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

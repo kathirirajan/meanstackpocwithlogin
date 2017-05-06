@@ -1,0 +1,27 @@
+{
+  "name": "mean-stack-poc-with-login",
+  "version": "0.1.0",
+  "description": "A sample Node.js app using Express 4",
+  "engines": {
+    "node": "6.10.3"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon ./server.js localhost 3000 or nodemon start localhost 3000"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "express-validator": "^3.2.0",
+    "jsonwebtoken": "^7.1.9",
+    "mongoose": "^4.6.3",
+    "morgan": "^1.7.0",
+    "nodemailer": "^4.0.1",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.1.0",
+    "passport-local": "^1.0.0",
+    "redis": "^2.7.1"
+  }
+}

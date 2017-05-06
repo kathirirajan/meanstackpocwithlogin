@@ -1,0 +1,1 @@
+$('.navbar-collapse ul li a').click(function(){$('.navbar-toggle:visible').click();});$('.navbar-brand').click(function(){$('.navbar-toggle:visible').click();});

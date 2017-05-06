@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <form name="userEditForm">
+      <div class="col-sm-offset-2 col-sm-8 col-md-offset-4 col-md-4 rowCol">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span>Name</span>
+          <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" name="userName" ng-model="user.name" required>
+        </div>
+      </div>
+      <div class="col-sm-offset-2 col-sm-8 col-md-offset-4 col-md-4 rowCol">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope"></span> Email</span>
+          <input type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1" name="emailID" ng-model="user.email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required>
+        </div>
+      </div>
+      <div class="col-sm-offset-2 col-sm-8 col-md-offset-4 col-md-4 rowCol">
+        <button type="button" class="btn btn-primary" ng-click="updateUser()" ng-disabled="userEditForm.$invalid  || user.password !== user.confPassword">Update User <span class="glyphicon glyphicon-plus"></span></button>
+        <button type="button" class="btn btn-danger" ng-click="cancel()">Cancel <span class="glyphicon glyphicon-remove"></span></button>
+      </div>
+  </div>
+</div>
